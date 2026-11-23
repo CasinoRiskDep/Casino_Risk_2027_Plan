@@ -183,6 +183,12 @@ html[lang="hy"] .label{text-transform:none;letter-spacing:.04em;font-size:14px}
 .v-sla{fill:none;stroke:url(#gCy);stroke-width:7;stroke-linecap:round;animation:sla 6s ease-in-out infinite both}
 .v-block{animation:blocks 6s ease-in-out infinite both;animation-delay:calc(var(--b,0)*140ms)}
 
+.v-icoW{fill:#fff;stroke:none}
+.v-think{animation:think 1.4s ease-in-out infinite;animation-delay:calc(var(--d)*.22s)}
+@keyframes think{0%,100%{opacity:.25}50%{opacity:1}}
+.d-title.xlong h2{font-size:clamp(18px,1.7vw,26px)}
+.stage.text-heavy{grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr)}
+.stage.text-heavy .tile p{grid-column:1/-1;margin-top:6px;font-size:clamp(13.5px,1.02vw,15px);line-height:1.48}
 @keyframes flow{to{stroke-dashoffset:-24}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes halo{0%{transform:scale(.88);opacity:.95}100%{transform:scale(1.45);opacity:0}}
@@ -224,9 +230,9 @@ html[lang="hy"] .label{text-transform:none;letter-spacing:.04em;font-size:14px}
 
 /* ───────── Responsive ───────── */
 @container dsc (max-width:700px){
-  .stage{grid-template-columns:1fr}
+  .stage,.stage.text-heavy{grid-template-columns:1fr}
   .viz svg{max-width:440px;margin:0 auto}
-  .stage .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stage:not(.text-heavy) .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
   .groups{grid-template-columns:1fr}
 }
 @container dsc (max-width:470px){
@@ -353,132 +359,350 @@ html[lang="hy"] .label{text-transform:none;letter-spacing:.04em;font-size:14px}
 
   /* ───────── Content: 7 strategic objectives ───────── */
   var ITEMS = [
-    { /* 01 */
-      t: {
-        hy: 'B2B գործընկերային սերվիսի ընդլայնում',
-        en: 'Expansion of the B2B Partner Service',
-        ru: 'Расширение B2B-сервиса для партнёров'
-      },
-      blocks: [
-        { h: { hy: 'Միասնական B2B ռիսկերի կառավարման սերվիս', en: 'Unified B2B risk management service', ru: 'Единый B2B-сервис управления рисками' } },
-        { h: { hy: 'Նոր հայտատեսակներ', en: 'New request types', ru: 'Новые типы заявок' } },
-        { h: { hy: 'Գործիքակազմ', en: 'Toolkit', ru: 'Инструментарий' } },
-        { h: { hy: 'Շահավետ պայմաններ', en: 'Favorable terms', ru: 'Выгодные условия' } }
-      ]
+  {
+    "t": {
+      "hy": "B2B գործընկերային սերվիսի ընդլայնում",
+      "en": "Expansion of the B2B Partner Service",
+      "ru": "Расширение B2B-сервиса для партнёров"
     },
-    { /* 02 */
-      t: {
-        hy: 'ROOT — Անկախ ռիսկերի կառավարման հարթակ',
-        en: 'ROOT — Independent Risk Management Platform',
-        ru: 'ROOT — независимая платформа управления рисками'
+    "blocks": [
+      {
+        "h": {
+          "hy": "Միասնական B2B ռիսկերի կառավարման սերվիս",
+          "en": "Unified B2B risk management service",
+          "ru": "Единый B2B-сервис управления рисками"
+        }
       },
-      blocks: [
-        { h: { hy: 'Անկախ հարթակի զարգացում', en: 'Development of the independent platform', ru: 'Развитие независимой платформы' } },
-        { h: { hy: 'Ներքին գործիքների միավորում', en: 'Consolidation of internal tools', ru: 'Объединение внутренних инструментов' } },
-        { h: { hy: 'Նոր մրցակցային գործիքակազմ', en: 'New competitive toolkit', ru: 'Новый конкурентный инструментарий' } },
-        { h: { hy: 'AI մոդուլ', en: 'AI module', ru: 'AI-модуль' } }
-      ]
+      {
+        "h": {
+          "hy": "Նոր հայտատեսակներ",
+          "en": "New request types",
+          "ru": "Новые типы заявок"
+        }
+      },
+      {
+        "h": {
+          "hy": "Գործիքակազմ",
+          "en": "Toolkit",
+          "ru": "Инструментарий"
+        }
+      },
+      {
+        "h": {
+          "hy": "Շահավետ պայմաններ",
+          "en": "Favorable terms",
+          "ru": "Выгодные условия"
+        }
+      }
+    ]
+  },
+  {
+    "t": {
+      "hy": "ROOT — Անկախ ռիսկերի կառավարման հարթակ",
+      "en": "ROOT — Independent Risk Management Platform",
+      "ru": "ROOT — независимая платформа управления рисками"
     },
-    { /* 03 */
-      t: {
-        hy: 'Imagine Live-ի ռիսկերի կառավարում, սերվիսի ամբողջականացում',
-        en: 'Imagine Live Risk Management and Service Completeness',
-        ru: 'Управление рисками Imagine Live и полнота сервиса'
+    "blocks": [
+      {
+        "h": {
+          "hy": "Անկախ հարթակի զարգացում",
+          "en": "Development of the independent platform",
+          "ru": "Развитие независимой платформы"
+        }
       },
-      blocks: [
-        { h: { hy: 'Ֆունկցիոնալներ', en: 'Functionality', ru: 'Функционал' },
-          p: { hy: 'Ավարտին հասցնում', en: 'Brought to completion', ru: 'Доведение до завершения' } },
-        { h: { hy: 'Գործիքներ', en: 'Tools', ru: 'Инструменты' },
-          p: { hy: 'Ավարտին հասցնում', en: 'Brought to completion', ru: 'Доведение до завершения' } },
-        { goal: true, wide: true,
-          h: { hy: 'Սերվիսի ամբողջականացում', en: 'Service completeness', ru: 'Полнота сервиса' } }
-      ]
+      {
+        "h": {
+          "hy": "Ներքին գործիքների միավորում",
+          "en": "Consolidation of internal tools",
+          "ru": "Объединение внутренних инструментов"
+        }
+      },
+      {
+        "h": {
+          "hy": "Նոր մրցակցային գործիքակազմ",
+          "en": "New competitive toolkit",
+          "ru": "Новый конкурентный инструментарий"
+        }
+      },
+      {
+        "h": {
+          "hy": "AI մոդուլ",
+          "en": "AI module",
+          "ru": "AI-модуль"
+        },
+        "p": {
+          "hy": "AI գործիքների և տրամաբանության ակտիվ կիրառում հարթակի բոլոր շերտերում",
+          "en": "Active use of AI tools and logic across every layer of the platform",
+          "ru": "Активное применение AI-инструментов и логики на всех уровнях платформы"
+        }
+      }
+    ]
+  },
+  {
+    "t": {
+      "hy": "Imagine Live-ի ռիսկերի կառավարում, սերվիսի ամբողջականացում",
+      "en": "Imagine Live Risk Management and Service Completeness",
+      "ru": "Управление рисками Imagine Live и полнота сервиса"
     },
-    { /* 04 */
-      t: {
-        hy: 'Հաճախորդների պատմական նոթերի կատեգորիզացիա և ռեփորթինգի համակարգում',
-        en: 'Categorization of Customer Historical Notes and Reporting Alignment',
-        ru: 'Категоризация исторических заметок по клиентам и систематизация репортинга'
+    "blocks": [
+      {
+        "h": {
+          "hy": "Ֆունկցիոնալներ",
+          "en": "Functionality",
+          "ru": "Функционал"
+        },
+        "p": {
+          "hy": "Ավարտին հասցնում",
+          "en": "Brought to completion",
+          "ru": "Доведение до завершения"
+        }
       },
-      blocks: [
-        { h: { hy: 'Կատեգորիզացիա', en: 'Categorization', ru: 'Категоризация' },
-          p: { hy: 'Տարվա ընթացքում պատմական նոթերի կատեգորիզացիա ըստ ռիսկի տեսակների',
-               en: 'Categorization of historical notes by risk type throughout the year',
-               ru: 'Категоризация исторических заметок по типам рисков в течение года' } },
-        { h: { hy: 'Ռեփորթինգ և անալիտիկա', en: 'Reporting and analytics', ru: 'Репортинг и аналитика' },
-          p: { hy: 'Ռեփորթինգի / անալիտիկայի բարելավում',
-               en: 'Improvement of reporting / analytics',
-               ru: 'Улучшение репортинга / аналитики' } },
-        { goal: true, wide: true,
-          h: { hy: 'Հիմք ավտոմատացման համար', en: 'Foundation for automation', ru: 'Основа для автоматизации' },
-          p: { hy: 'Թագերի վրա հիմնված որոշակի ավտոմատացված գործընթացների ներդրման և ռեսուրսների պահանջի կրճատման համար',
-               en: 'For introducing certain tag-based automated processes and reducing resource demand',
-               ru: 'Для внедрения отдельных автоматизированных процессов на основе тегов и сокращения потребности в ресурсах' } }
-      ]
+      {
+        "h": {
+          "hy": "Գործիքներ",
+          "en": "Tools",
+          "ru": "Инструменты"
+        },
+        "p": {
+          "hy": "Ավարտին հասցնում",
+          "en": "Brought to completion",
+          "ru": "Доведение до завершения"
+        }
+      },
+      {
+        "goal": true,
+        "wide": true,
+        "h": {
+          "hy": "Սերվիսի ամբողջականացում",
+          "en": "Service completeness",
+          "ru": "Полнота сервиса"
+        }
+      }
+    ]
+  },
+  {
+    "t": {
+      "hy": "Արտադրողականության աճ, ռեսուրսների խնայողություն և ռիսկերի արագ կառավարում",
+      "en": "Productivity Growth, Resource Savings and Rapid Risk Management",
+      "ru": "Рост производительности, экономия ресурсов и оперативное управление рисками"
     },
-    { /* 05 */
-      t: {
-        hy: 'Կարգավորող համագործակցության խորացում, նոր պահանջների ներդրում և KYCAid զարգացում',
-        en: 'Deeper Regulatory Cooperation, New Requirements and KYCAid Development',
-        ru: 'Углубление взаимодействия с регуляторами, внедрение новых требований и развитие KYCAid'
+    "blocks": [
+      {
+        "h": {
+          "hy": "Արտադրողականության բարձրացում",
+          "en": "Productivity increase",
+          "ru": "Повышение производительности"
+        }
       },
-      groups: [
-        { no: '5.1',
-          t: { hy: 'Առկա ռեգուլյատոր', en: 'Existing regulator', ru: 'Действующий регулятор' },
-          blocks: [
-            { h: { hy: 'Համագործակցության խորացում', en: 'Deeper cooperation', ru: 'Углубление взаимодействия' },
-              p: { hy: 'Օրենսդրական փոփոխություններին նախապես ծանոթանալու և դրանց մշակմանը ներգրավվելու համար',
-                   en: 'To become familiar with legislative changes in advance and be involved in their development',
-                   ru: 'Чтобы заблаговременно знакомиться с законодательными изменениями и участвовать в их разработке' } },
-            { h: { hy: 'KYCAid զարգացում', en: 'KYCAid development', ru: 'Развитие KYCAid' } },
-            { h: { hy: 'Վիդեո-քուիզ հարցաշարերի կիրառում', en: 'Use of video-quiz questionnaires', ru: 'Применение видео-квиз опросников' } }
-          ] },
-        { no: '5.2',
-          t: { hy: 'Նոր ներդրվող ռեգուլյատոր', en: 'Newly introduced regulator', ru: 'Вновь вводимый регулятор' },
-          chip: { hy: 'Հունվարից · B2C', en: 'From January · B2C', ru: 'С января · B2C' },
-          sub: { hy: 'Հունվարից B2C ուղղությամբ գործարկվող նոր կարգավորող մարմնի պահանջների ստացմանը զուգահեռ',
-                 en: 'In parallel with receiving the requirements of the new regulatory body launching for B2C from January',
-                 ru: 'Параллельно с получением требований нового регулирующего органа, запускаемого с января по направлению B2C' },
-          blocks: [
-            { h: { hy: 'Ռիսկային կետերի դիտարկում / վերանայում', en: 'Review of risk points', ru: 'Анализ и пересмотр точек риска' } },
-            { h: { hy: 'Նոր գործընթացների ներդրում', en: 'Introduction of new processes', ru: 'Внедрение новых процессов' } },
-            { year: true,
-              h: { hy: 'Համապատասխանության ապահովում', en: 'Compliance assurance', ru: 'Обеспечение соответствия' },
-              p: { hy: 'Ամբողջ տարվա ընթացքում', en: 'Throughout the entire year', ru: 'В течение всего года' } }
-          ] }
-      ]
+      {
+        "h": {
+          "hy": "SLA ժամանակի կրճատում",
+          "en": "SLA time reduction",
+          "ru": "Сокращение времени SLA"
+        }
+      },
+      {
+        "h": {
+          "hy": "Հավելյալ ռեսուրսների պահանջի նվազեցում",
+          "en": "Lower demand for additional resources",
+          "ru": "Снижение потребности в дополнительных ресурсах"
+        }
+      },
+      {
+        "h": {
+          "hy": "Ռիսկերի արագ և ճշգրիտ կառավարում",
+          "en": "Fast and accurate risk management",
+          "ru": "Быстрое и точное управление рисками"
+        }
+      }
+    ]
+  },
+  {
+    "t": {
+      "hy": "Կարգավորող համագործակցության խորացում, նոր պահանջների ներդրում և KYCAid զարգացում",
+      "en": "Deeper Regulatory Cooperation, New Requirements and KYCAid Development",
+      "ru": "Углубление взаимодействия с регуляторами, внедрение новых требований и развитие KYCAid"
     },
-    { /* 06 */
-      t: {
-        hy: 'Թիմի համալրում և ֆունկցիոնալ մասնագիտացում',
-        en: 'Team Staffing and Functional Specialization',
-        ru: 'Комплектование команды и функциональная специализация'
+    "groups": [
+      {
+        "no": "5.1",
+        "t": {
+          "hy": "Առկա ռեգուլյատոր",
+          "en": "Existing regulator",
+          "ru": "Действующий регулятор"
+        },
+        "blocks": [
+          {
+            "h": {
+              "hy": "Համագործակցության խորացում",
+              "en": "Deeper cooperation",
+              "ru": "Углубление взаимодействия"
+            },
+            "p": {
+              "hy": "Օրենսդրական փոփոխություններին նախապես ծանոթանալու և դրանց մշակմանը ներգրավվելու համար",
+              "en": "To become familiar with legislative changes in advance and be involved in their development",
+              "ru": "Чтобы заблаговременно знакомиться с законодательными изменениями и участвовать в их разработке"
+            }
+          },
+          {
+            "h": {
+              "hy": "KYCAid զարգացում",
+              "en": "KYCAid development",
+              "ru": "Развитие KYCAid"
+            }
+          },
+          {
+            "h": {
+              "hy": "Վիդեո-քուիզ հարցաշարերի կիրառում",
+              "en": "Use of video-quiz questionnaires",
+              "ru": "Применение видео-квиз опросников"
+            }
+          }
+        ]
       },
-      blocks: [
-        { h: { hy: 'Կազմակերպչական կառուցվածքի օպտիմալացում', en: 'Optimization of the organizational structure', ru: 'Оптимизация организационной структуры' } },
-        { h: { hy: 'Թիմերի ամբողջական համալրում', en: 'Full team staffing', ru: 'Полное комплектование команд' },
-          p: { hy: 'Հաստատված հաստիքացուցակով', en: 'In line with the approved headcount plan', ru: 'По утверждённому штатному расписанию' } },
-        { h: { hy: 'Ֆունկցիոնալ բաժանում', en: 'Functional division', ru: 'Функциональное разделение' },
-          p: { hy: 'Նեղ մասնագիտացման համար', en: 'For narrow specialization', ru: 'Для узкой специализации' } },
-        { goal: true,
-          h: { hy: 'Հավելյալ հաստիքների պահանջի նվազագույնի հասցնում', en: 'Minimizing the need for additional positions', ru: 'Минимизация потребности в дополнительных штатных единицах' } }
-      ]
+      {
+        "no": "5.2",
+        "t": {
+          "hy": "Նոր ներդրվող ռեգուլյատոր",
+          "en": "Newly introduced regulator",
+          "ru": "Вновь вводимый регулятор"
+        },
+        "chip": {
+          "hy": "Հունվարից · B2C",
+          "en": "From January · B2C",
+          "ru": "С января · B2C"
+        },
+        "sub": {
+          "hy": "Հունվարից B2C ուղղությամբ գործարկվող նոր կարգավորող մարմնի պահանջների ստացմանը զուգահեռ",
+          "en": "In parallel with receiving the requirements of the new regulatory body launching for B2C from January",
+          "ru": "Параллельно с получением требований нового регулирующего органа, запускаемого с января по направлению B2C"
+        },
+        "blocks": [
+          {
+            "h": {
+              "hy": "Ռիսկային կետերի դիտարկում / վերանայում",
+              "en": "Review of risk points",
+              "ru": "Анализ и пересмотр точек риска"
+            }
+          },
+          {
+            "h": {
+              "hy": "Նոր գործընթացների ներդրում",
+              "en": "Introduction of new processes",
+              "ru": "Внедрение новых процессов"
+            }
+          },
+          {
+            "year": true,
+            "h": {
+              "hy": "Համապատասխանության ապահովում",
+              "en": "Compliance assurance",
+              "ru": "Обеспечение соответствия"
+            },
+            "p": {
+              "hy": "Ամբողջ տարվա ընթացքում",
+              "en": "Throughout the entire year",
+              "ru": "В течение всего года"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "t": {
+      "hy": "Թիմի համալրում և ֆունկցիոնալ մասնագիտացում",
+      "en": "Team Staffing and Functional Specialization",
+      "ru": "Комплектование команды и функциональная специализация"
     },
-    { /* 07 */
-      t: {
-        hy: 'Արտադրողականության աճ, ռեսուրսների խնայողություն և ռիսկերի արագ կառավարում',
-        en: 'Productivity Growth, Resource Savings and Rapid Risk Management',
-        ru: 'Рост производительности, экономия ресурсов и оперативное управление рисками'
+    "blocks": [
+      {
+        "h": {
+          "hy": "Կազմակերպչական կառուցվածքի օպտիմալացում",
+          "en": "Optimization of the organizational structure",
+          "ru": "Оптимизация организационной структуры"
+        }
       },
-      blocks: [
-        { h: { hy: 'Արտադրողականության բարձրացում', en: 'Productivity increase', ru: 'Повышение производительности' } },
-        { h: { hy: 'SLA ժամանակի կրճատում', en: 'SLA time reduction', ru: 'Сокращение времени SLA' } },
-        { h: { hy: 'Հավելյալ ռեսուրսների պահանջի նվազեցում', en: 'Lower demand for additional resources', ru: 'Снижение потребности в дополнительных ресурсах' } },
-        { h: { hy: 'Ռիսկերի արագ և ճշգրիտ կառավարում', en: 'Fast and accurate risk management', ru: 'Быстрое и точное управление рисками' } }
-      ]
-    }
-  ];
-
+      {
+        "h": {
+          "hy": "Թիմերի ամբողջական համալրում",
+          "en": "Full team staffing",
+          "ru": "Полное комплектование команд"
+        },
+        "p": {
+          "hy": "Հաստատված հաստիքացուցակով",
+          "en": "In line with the approved headcount plan",
+          "ru": "По утверждённому штатному расписанию"
+        }
+      },
+      {
+        "h": {
+          "hy": "Ֆունկցիոնալ բաժանում",
+          "en": "Functional division",
+          "ru": "Функциональное разделение"
+        },
+        "p": {
+          "hy": "Նեղ մասնագիտացման համար",
+          "en": "For narrow specialization",
+          "ru": "Для узкой специализации"
+        }
+      },
+      {
+        "goal": true,
+        "h": {
+          "hy": "Հավելյալ հաստիքների պահանջի նվազագույնի հասցնում",
+          "en": "Minimizing the need for additional positions",
+          "ru": "Минимизация потребности в дополнительных штатных единицах"
+        }
+      }
+    ]
+  },
+  {
+    "t": {
+      "hy": "Ռիսկայնության գնահատման հիման վրա խաղային հաշիվների կատեգորիզացման նոր համակարգի մշակում և ներդրում",
+      "en": "Development and Implementation of a New Gaming Account Categorization System Based on Risk Assessment",
+      "ru": "Разработка и внедрение новой системы категоризации игровых аккаунтов на основе оценки рисков"
+    },
+    "blocks": [
+      {
+        "h": {
+          "hy": "Միասնական համակարգ",
+          "en": "Unified system",
+          "ru": "Единая система"
+        },
+        "p": {
+          "hy": "Տարվա ընթացքում նախատեսվում է մշակել և ներդնել խաղային հաշիվների ռիսկայնության գնահատման, կատեգորիզացման և թագավորման (tagging) միասնական համակարգ։",
+          "en": "During the year, it is planned to develop and implement a unified system for risk assessment, categorization and tagging of gaming accounts.",
+          "ru": "В течение года планируется разработать и внедрить единую систему оценки рисков, категоризации и тегирования игровых аккаунтов."
+        }
+      },
+      {
+        "h": {
+          "hy": "Արդյունավետություն",
+          "en": "Effectiveness",
+          "ru": "Эффективность"
+        },
+        "p": {
+          "hy": "Այս մեխանիզմի ներդրումը թույլ կտա էականորեն բարձրացնել ընթացիկ մշտադիտարկումների (monitoring) և ռիսկերի կառավարման արդյունավետությունը՝ ապահովելով առավել ճշգրիտ վերլուծական տվյալներ և ռեփորթինգ։",
+          "en": "Implementing this mechanism will significantly increase the effectiveness of ongoing monitoring and risk management by providing more accurate analytical data and reporting.",
+          "ru": "Внедрение этого механизма позволит существенно повысить эффективность текущего мониторинга и управления рисками, обеспечив более точные аналитические данные и репортинг."
+        }
+      },
+      {
+        "h": {
+          "hy": "Ավտոմատացման հիմք",
+          "en": "Foundation for automation",
+          "ru": "Основа для автоматизации"
+        },
+        "p": {
+          "hy": "Ստեղծված կառուցվածքային բազան հիմք կծառայի թագերի վրա հիմնված որոշակի ավտոմատացված գործընթացների ներդրման համար՝ ապահովելով ռիսկերի կանխարգելիչ կառավարում և նվազագույնի հասցնելով հավելյալ մարդկային ռեսուրսների ներգրավման անհրաժեշտությունը։",
+          "en": "The resulting structural base will serve as the foundation for introducing certain tag-based automated processes, enabling proactive risk management and minimizing the need for additional human resources.",
+          "ru": "Созданная структурная база станет основой для внедрения отдельных автоматизированных процессов на основе тегов, обеспечивая превентивное управление рисками и минимизируя потребность в привлечении дополнительных человеческих ресурсов."
+        }
+      }
+    ]
+  }
+];
 
   /* ───────── Icons & SVG visuals (language-neutral, no figures) ───────── */
   var ICONS = {
@@ -520,22 +744,49 @@ html[lang="hy"] .label{text-transform:none;letter-spacing:.04em;font-size:14px}
     return wrap('B2B', s);
   }
 
-  /* 02 — ROOT: consolidation of internal tools, competitive toolkit and AI on an independent platform */
+  /* 02 — ROOT: independent platform with AI tools and logic running through every layer */
   function v2() {
-    var s = '';
-    s += '<g class="v-k" data-k="4"><path class="v-flow" d="M210 86V104"/><rect class="v-node" x="120" y="26" width="180" height="60" rx="20" style="stroke-width:2.4"/>' +
-      '<g class="v-pulse">' + ico('spark', 172, 56, 1.35, 'v-icoF') + '</g><text class="v-txt" x="244" y="57" style="font-size:24px">AI</text></g>';
-    s += '<g class="v-k" data-k="3"><path class="v-flow" d="M210 160V178"/><rect class="v-node" x="60" y="104" width="300" height="56" rx="18"/>' +
+    var ys = [56, 132, 204, 288], lx = [120, 60, 50, 40], rx = [300, 360, 370, 380];
+    var s = '<g class="v-k" data-k="4"><path class="v-line" d="M22 56V288M398 56V288"/><path class="v-flow" d="M22 56V288M398 56V288"/>';
+    ys.forEach(function (y, i) {
+      s += '<path class="v-flow" style="stroke-width:1.8" d="M22 ' + y + 'H' + lx[i] + 'M398 ' + y + 'H' + rx[i] + '"/>';
+    });
+    [128, 210, 292].forEach(function (x) { s += '<path class="v-flow" style="stroke-width:1.8" d="M210 86C210 97 ' + x + ' 93 ' + x + ' 104"/>'; });
+    [84, 168, 252, 336].forEach(function (x) { s += '<path class="v-flow" style="stroke-width:1.8" d="M210 160C210 171 ' + x + ' 171 ' + x + ' 182"/>'; });
+    s += '</g>';
+    /* k3 — competitive toolkit */
+    s += '<g class="v-k" data-k="3"><rect class="v-node" x="60" y="104" width="300" height="56" rx="18"/>' +
       ico('gear', 128, 132, 1.15) + ico('sliders', 210, 132, 1.15) + ico('modules', 292, 132, 1.15) + '</g>';
-    var s2 = '<g class="v-k" data-k="2">';
+    /* k2 — internal tools consolidated into ROOT */
+    var c = '<g class="v-k" data-k="2">';
     for (var i = 0; i < 4; i++) {
       var x = 50 + i * 84, cx = x + 34;
-      s2 += '<rect class="v-soft" x="' + x + '" y="182" width="68" height="44" rx="12"/><circle cx="' + cx + '" cy="204" r="5" fill="#00D8F6"/>' +
+      c += '<rect class="v-soft" x="' + x + '" y="182" width="68" height="44" rx="12"/><circle cx="' + cx + '" cy="208" r="5" fill="#00D8F6"/>' +
         '<path class="v-flow" d="M' + cx + ' 226C' + cx + ' 238 210 236 210 250"/>';
     }
-    s += s2 + '</g>';
+    s += c + '</g>';
+    /* k1 — independent platform */
     s += '<g class="v-k" data-k="1"><rect x="40" y="250" width="340" height="76" rx="20" fill="url(#gCy)"/><text class="v-txt dark" x="210" y="289" style="font-size:32px;letter-spacing:.12em">ROOT</text></g>';
-    return wrap('ROOT', s);
+    /* k4 — AI layer, AI badges on every layer, neural lattice on the platform, logic bus nodes */
+    var o = '<g class="v-k" data-k="4">';
+    o += '<rect class="v-node" x="120" y="26" width="180" height="60" rx="20" style="stroke-width:2.6;filter:drop-shadow(0 0 10px rgba(0,216,246,.55))"/>' +
+      '<g class="v-pulse">' + ico('spark', 160, 56, 1.35, 'v-icoF') + '</g><text class="v-txt" x="214" y="57" style="font-size:28px">AI</text>' +
+      '<circle class="v-think" style="--d:0" cx="258" cy="57" r="3" fill="#00D8F6"/><circle class="v-think" style="--d:1" cx="270" cy="57" r="3" fill="#00D8F6"/><circle class="v-think" style="--d:2" cx="282" cy="57" r="3" fill="#00D8F6"/>';
+    [128, 210, 292].forEach(function (x, k) { o += '<g class="v-pulse" style="animation-delay:' + (k * 0.4) + 's">' + ico('spark', x + 17, 119, 0.5, 'v-icoF') + '</g>'; });
+    for (var j = 0; j < 4; j++) o += '<g class="v-pulse" style="animation-delay:' + (j * 0.3) + 's">' + ico('spark', 50 + j * 84 + 56, 192, 0.5, 'v-icoF') + '</g>';
+    var L = [[62, 272], [62, 288], [62, 304], [88, 280], [88, 296]];
+    var lat = '';
+    [0, 1].forEach(function (side) {
+      var pts = L.map(function (p) { return side ? [420 - p[0], p[1]] : p; });
+      for (var a = 0; a < 3; a++) for (var b = 3; b < 5; b++) lat += '<path d="M' + pts[a][0] + ' ' + pts[a][1] + 'L' + pts[b][0] + ' ' + pts[b][1] + '" stroke="#fff" stroke-opacity=".5" stroke-width="1.2" fill="none"/>';
+      pts.forEach(function (p) { lat += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="3" fill="#fff"/>'; });
+    });
+    o += lat;
+    ys.forEach(function (y) {
+      [22, 398].forEach(function (x) { o += '<circle class="v-node" cx="' + x + '" cy="' + y + '" r="12"/>' + ico('spark', x, y, 0.6, 'v-icoF'); });
+    });
+    o += '</g>';
+    return wrap('ROOT', s + o);
   }
 
   /* 03 — functionality + tools complete the service */
@@ -614,7 +865,7 @@ html[lang="hy"] .label{text-transform:none;letter-spacing:.04em;font-size:14px}
       '<path class="v-flow" d="M236 236H270M236 266H262M236 296H270"/></g>';
     return wrap('Productivity', q1 + q2 + q3 + q4);
   }
-  var VIZ = [v1, v2, v3, v4, null, v6, v7];
+  var VIZ = [v1, v2, v3, v7, null, v6, v4];
 
   /* ───────── State & helpers ───────── */
   var LANGS = ['hy', 'en', 'ru'];
@@ -717,7 +968,7 @@ html[lang="hy"] .label{text-transform:none;letter-spacing:.04em;font-size:14px}
   function renderDetail() {
     var it = ITEMS[state.idx];
     var title = tx(it.t);
-    var html = '<div class="d-title' + (title.length > 62 ? ' long' : '') + '"><span class="big" aria-hidden="true">' + pad(state.idx + 1) + '</span>' +
+    var html = '<div class="d-title' + (title.length > 90 ? ' xlong' : title.length > 62 ? ' long' : '') + '"><span class="big" aria-hidden="true">' + pad(state.idx + 1) + '</span>' +
       '<h2 id="d-title">' + title + '</h2></div>';
     if (it.groups) {
       html += '<div class="groups">';
@@ -730,7 +981,8 @@ html[lang="hy"] .label{text-transform:none;letter-spacing:.04em;font-size:14px}
       }
       html += '</div>';
     } else {
-      html += '<div class="stage"><figure class="viz">' + VIZ[state.idx]() + '<figcaption class="viz-cap">' + UI[state.lang].viz + '</figcaption></figure>' +
+      var heavy = it.blocks.some(function (b) { return b.p && tx(b.p).length > 140; });
+      html += '<div class="stage' + (heavy ? ' text-heavy' : '') + '"><figure class="viz">' + VIZ[state.idx]() + '<figcaption class="viz-cap">' + UI[state.lang].viz + '</figcaption></figure>' +
         '<div class="tiles">' + tilesHTML(it.blocks, true) + '</div></div>';
     }
     var box = $('dbody');
