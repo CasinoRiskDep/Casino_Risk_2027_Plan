@@ -190,6 +190,10 @@ html[lang="hy"] .label{text-transform:none;letter-spacing:.04em;font-size:14px}
 .stage.text-heavy{grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr)}
 .stage.text-heavy .tile p{grid-column:1/-1;margin-top:6px;font-size:clamp(13.5px,1.02vw,15px);line-height:1.48}
 .v-lbl{font-family:var(--f-body)!important;font-size:15px;font-weight:700;fill:#F3F8FD;text-anchor:middle;dominant-baseline:central;letter-spacing:.02em}
+.v-lbl.dept{font-size:15.5px}
+.v-lbl.u{font-size:13px;letter-spacing:.01em}
+html[lang="hy"] .v-lbl.u{font-size:12.5px;letter-spacing:0}
+html[lang="hy"] .v-lbl.dept{font-size:15px}
 .v-lbl.sm{font-size:13px;font-weight:500;fill:#C6D2E0}
 .v-sl{transform-box:fill-box;transform-origin:center;animation:splitL 1.1s cubic-bezier(.3,1.1,.4,1) .15s backwards}
 .v-sr{transform-box:fill-box;transform-origin:center;animation:splitR 1.1s cubic-bezier(.3,1.1,.4,1) .15s backwards}
@@ -578,56 +582,44 @@ html[lang="hy"] .label{text-transform:none;letter-spacing:.04em;font-size:14px}
   },
   {
     "t": {
-      "hy": "Կառուցվածքային փոփոխություն՝ կարգավորվող և չկարգավորվող բաժիններ",
-      "en": "Structural Change: Regulated and Unregulated Divisions",
-      "ru": "Структурные изменения: регулируемое и нерегулируемое подразделения"
+      "hy": "Կառուցվածքային փոփոխություն՝ կարգավորվող և չկարգավորվող շուկաների բաժիններ",
+      "en": "Structural Change: Units for Regulated and Non-Regulated Markets",
+      "ru": "Структурные изменения: подразделения для регулируемых и нерегулируемых рынков"
     },
     "blocks": [
       {
         "h": {
-          "hy": "International Risk Management Department",
-          "en": "International Risk Management Department",
-          "ru": "International Risk Management Department"
+          "hy": "Digitain Կազինո ռիսկերի կառավարման դեպարտամենտ",
+          "en": "Digitain Casino Risk Management Department",
+          "ru": "Департамент управления рисками Digitain Casino"
         },
         "p": {
-          "hy": "Դեպարտամենտը բաժանվում է երկու բաժնի՝ կարգավորվող և չկարգավորվող",
-          "en": "The department is divided into two divisions: regulated and unregulated",
-          "ru": "Департамент делится на два подразделения: регулируемое и нерегулируемое"
+          "hy": "Դեպարտամենտը բաժանվում է երկու բաժնի",
+          "en": "The department is divided into two units",
+          "ru": "Департамент делится на два подразделения"
         }
       },
       {
         "h": {
-          "hy": "Կարգավորվող բաժին",
-          "en": "Regulated division",
-          "ru": "Регулируемое подразделение"
+          "hy": "Կարգավորվող շուկաների միջազգային ռիսկերի կառավարման բաժին",
+          "en": "International Risk Management Unit for Regulated Markets",
+          "ru": "Международный отдел управления рисками для регулируемых рынков"
         }
       },
       {
         "h": {
-          "hy": "Չկարգավորվող բաժին",
-          "en": "Unregulated division",
-          "ru": "Нерегулируемое подразделение"
-        }
-      },
-      {
-        "h": {
-          "hy": "Բաժնի ղեկավար",
-          "en": "Division head",
-          "ru": "Руководитель подразделения"
-        },
-        "p": {
-          "hy": "Յուրաքանչյուր բաժին ունի իր Բաժնի ղեկավարը՝ մեկ հոգի",
-          "en": "Each division has its own head — one person",
-          "ru": "У каждого подразделения свой руководитель — один человек"
+          "hy": "Չկարգավորվող շուկաների միջազգային ռիսկերի կառավարման բաժին",
+          "en": "International Risk Management Unit for Non-Regulated Markets",
+          "ru": "Международный отдел управления рисками для нерегулируемых рынков"
         }
       }
     ]
   },
   {
     "t": {
-      "hy": "Կարգավորող համագործակցության խորացում, նոր պահանջների ներդրում և KYCAid զարգացում",
-      "en": "Deeper Regulatory Cooperation, New Requirements and KYCAid Development",
-      "ru": "Углубление взаимодействия с регуляторами, внедрение новых требований и развитие KYCAid"
+      "hy": "Կարգավորող Մարմինների հետ համագործակցության խորացում, նոր պահանջների ներդրում և KYCAid զարգացում",
+      "en": "Deeper Cooperation with Regulatory Bodies, Introduction of New Requirements and KYCAid Development",
+      "ru": "Углубление сотрудничества с регулирующими органами, внедрение новых требований и развитие KYCAid"
     },
     "groups": [
       {
@@ -971,37 +963,51 @@ html[lang="hy"] .label{text-transform:none;letter-spacing:.04em;font-size:14px}
       '<path class="v-flow" d="M236 236H270M236 266H262M236 296H270"/></g>';
     return wrap('Productivity', q1 + q2 + q3 + q4);
   }
-  /* 05 — the department splits into a regulated and an unregulated division, each with its own unit managers */
+  /* 05 — one department, two units (regulated / non-regulated markets), one head per unit */
   var ORG = {
-    hy: { reg: 'Կարգավորվող', unreg: 'Չկարգավորվող', mgr: 'Բաժնի ղեկավար' },
-    en: { reg: 'Regulated', unreg: 'Unregulated', mgr: 'Division head' },
-    ru: { reg: 'Регулируемый', unreg: 'Нерегулируемый', mgr: 'Руководитель' }
+    hy: { mgr: 'Բաժնի ղեկավար',
+          dept: ['Digitain Կազինո ռիսկերի', 'կառավարման դեպարտամենտ'],
+          u1: ['Կարգավորվող շուկաների', 'միջազգային ռիսկերի', 'կառավարման բաժին'],
+          u2: ['Չկարգավորվող շուկաների', 'միջազգային ռիսկերի', 'կառավարման բաժին'] },
+    en: { mgr: 'Division head',
+          dept: ['Digitain Casino', 'Risk Management Department'],
+          u1: ['International Risk', 'Management Unit for', 'Regulated Markets'],
+          u2: ['International Risk', 'Management Unit for', 'Non-Regulated Markets'] },
+    ru: { mgr: 'Руководитель',
+          dept: ['Департамент управления', 'рисками Digitain Casino'],
+          u1: ['Международный отдел', 'управления рисками для', 'регулируемых рынков'],
+          u2: ['Международный отдел', 'управления рисками для', 'нерегулируемых рынков'] }
   };
   ICONS.globe = '<circle r="10"/><path d="M-10 0H10M0-10C-5-5-5 5 0 10M0-10C5-5 5 5 0 10"/>';
   ICONS.person = '<circle cx="0" cy="-5" r="4.6"/><path d="M-9 10C-9 3 9 3 9 10"/>';
   ICONS.shieldOff = '<path d="M0-11L10-7V1C10 7 5 10 0 12C-5 10-10 7-10 1V-7Z" stroke-dasharray="4.5 2.5" style="stroke-width:2.3"/>';
+  function vtext(x, y, lines, lh, cls) {
+    return lines.map(function (ln, i) { return '<text class="v-lbl ' + (cls || '') + '" x="' + x + '" y="' + (y + i * lh) + '">' + ln + '</text>'; }).join('');
+  }
   function v5() {
     var o = ORG[state.lang];
-    var s = '<g class="v-k" data-k="1"><path class="v-line" d="M210 84V106"/><path class="v-flow" d="M210 84V106"/>' +
-      '<rect class="v-node" x="110" y="24" width="200" height="60" rx="20" style="stroke-width:2.6;filter:drop-shadow(0 0 10px rgba(0,216,246,.5))"/>' +
-      '<g class="v-pulse">' + ico('globe', 210, 54, 1.55) + '</g></g>';
-    /* regulated (left) */
-    s += '<g class="v-k" data-k="2"><path class="v-line" d="M210 106H105V132"/><path class="v-flow" d="M210 106H105V132"/></g>' +
-      '<g class="v-k v-sl" data-k="2"><rect class="v-node" x="20" y="132" width="170" height="92" rx="20"/>' + ico('shield', 105, 163, 1.35) +
-      '<text class="v-lbl" x="105" y="205">' + o.reg + '</text></g>';
-    /* unregulated (right) */
-    s += '<g class="v-k" data-k="3"><path class="v-line" d="M210 106H315V132"/><path class="v-flow" d="M210 106H315V132"/></g>' +
-      '<g class="v-k v-sr" data-k="3"><rect class="v-node" x="230" y="132" width="170" height="92" rx="20" style="stroke-dasharray:7 5"/>' + ico('shieldOff', 315, 163, 1.35) +
-      '<text class="v-lbl" x="315" y="205">' + o.unreg + '</text></g>';
-    /* one division head per division */
-    var m = '<g class="v-k" data-k="4">';
-    [105, 315].forEach(function (x, i) {
-      m += '<path class="v-line" d="M' + x + ' 224V252"/><path class="v-flow" d="M' + x + ' 224V252"/>' +
-        '<g class="v-pop" style="--n:' + i + '"><circle class="v-node" cx="' + x + '" cy="282" r="28" style="stroke-width:2.4;filter:drop-shadow(0 0 8px rgba(0,216,246,.45))"/>' +
-        '<g class="v-pulse" style="animation-delay:' + (i * 0.4) + 's">' + ico('person', x, 282, 1.55) + '</g>' +
-        ico('spark', x + 25, 259, 0.55, 'v-icoF') + '</g>';
+    /* department */
+    var s = '<g class="v-k" data-k="1"><path class="v-line" d="M210 90V112"/><path class="v-flow" d="M210 90V112"/>' +
+      '<rect class="v-node" x="40" y="16" width="340" height="74" rx="22" style="stroke-width:2.6;filter:drop-shadow(0 0 10px rgba(0,216,246,.5))"/>' +
+      '<g class="v-pulse">' + ico('globe', 84, 53, 1.6) + '</g>' +
+      vtext(244, 44, o.dept, 20, 'dept') + '</g>';
+    /* unit for regulated markets (solid) */
+    s += '<g class="v-k" data-k="2"><path class="v-line" d="M210 112H107V138"/><path class="v-flow" d="M210 112H107V138"/></g>' +
+      '<g class="v-k v-sl" data-k="2"><rect class="v-node" x="14" y="138" width="186" height="104" rx="20"/>' + ico('shield', 107, 163, 1.2) +
+      vtext(107, 192, o.u1, 16, 'u') + '</g>';
+    /* unit for non-regulated markets (dashed) */
+    s += '<g class="v-k" data-k="3"><path class="v-line" d="M210 112H313V138"/><path class="v-flow" d="M210 112H313V138"/></g>' +
+      '<g class="v-k v-sr" data-k="3"><rect class="v-node" x="220" y="138" width="186" height="104" rx="20" style="stroke-dasharray:7 5"/>' + ico('shieldOff', 313, 163, 1.2) +
+      vtext(313, 192, o.u2, 16, 'u') + '</g>';
+    /* one head per unit — lights up together with its unit */
+    var m = '';
+    [107, 313].forEach(function (x, i) {
+      m += '<g class="v-k" data-k="' + (i + 2) + '"><path class="v-line" d="M' + x + ' 242V266"/><path class="v-flow" d="M' + x + ' 242V266"/>' +
+        '<g class="v-pop" style="--n:' + i + '"><circle class="v-node" cx="' + x + '" cy="294" r="28" style="stroke-width:2.4;filter:drop-shadow(0 0 8px rgba(0,216,246,.45))"/>' +
+        '<g class="v-pulse" style="animation-delay:' + (i * 0.4) + 's">' + ico('person', x, 294, 1.55) + '</g>' +
+        ico('spark', x + 25, 271, 0.55, 'v-icoF') + '</g>' +
+        vtext(x, 340, [o.mgr], 0, 'sm') + '</g>';
     });
-    m += '<text class="v-lbl sm" x="105" y="332">' + o.mgr + '</text><text class="v-lbl sm" x="315" y="332">' + o.mgr + '</text></g>';
     return wrap('Structure', s + m);
   }
   var VIZ = [v1, v2, v3, v7, v5, null, v6, v4];
@@ -1065,7 +1071,7 @@ html[lang="hy"] .label{text-transform:none;letter-spacing:.04em;font-size:14px}
     var tag = '<span class="idx">' + pad(order) + '</span>';
     return '<article class="' + cls + '"' + (linked ? ' data-k="' + (i + 1) + '" tabindex="0"' : '') + ' style="--i:' + i + '">' + tag +
       '<h3>' + tx(b.h) + '</h3>' +
-      (b.p ? '<p>' + tx(b.p) + '</p>' : '') +
+      (b.p && tx(b.p) ? '<p>' + tx(b.p) + '</p>' : '') +
       (b.year ? yearHTML() : '') +
       '</article>';
   }
@@ -1120,7 +1126,7 @@ html[lang="hy"] .label{text-transform:none;letter-spacing:.04em;font-size:14px}
       }
       html += '</div>';
     } else {
-      var heavy = it.blocks.some(function (b) { return b.p && tx(b.p).length > 140; });
+      var heavy = it.blocks.some(function (b) { return b.p && tx(b.p) && tx(b.p).length > 140; });
       html += '<div class="stage' + (heavy ? ' text-heavy' : '') + '"><figure class="viz">' + VIZ[state.idx]() + '<figcaption class="viz-cap">' + UI[state.lang].viz + '</figcaption></figure>' +
         '<div class="tiles">' + tilesHTML(it.blocks, true) + '</div></div>';
     }
